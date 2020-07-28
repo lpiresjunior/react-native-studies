@@ -1,1 +1,1 @@
-Este repositório foi criado para armazenar meus estudos sobre React Native
+Estudos de React Native com o curso devsamurai
