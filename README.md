@@ -1,5 +1,6 @@
 ### **Este repositório foi criado para armazenar meus estudos sobre React Native**
 
+<hr>
 
 ### <a href="https://github.com/lutidev/react-native-studies/tree/master/curso-devsamurai">Curso devsamurai</a>
 
@@ -16,3 +17,37 @@ Você vai aprender e colocar em prática os conceitos ​básicos e avançados q
 - Dispositivos como GPS e Câmera.
 - ​Conexão com banco de dados local e remoto.
 - Utilizar funções modernas como, por exemplo, Firebase.
+
+### Executando o Projeto
+
+Clone o projeto e navegue até a pasta **curso-devsamurai**
+
+```
+$ git clone https://github.com/lutidev/react-native-studies
+```
+
+```
+$ cd react-native-studies
+```
+
+```
+$ cd curso-devsamurai
+```
+
+Instale as dependências
+
+```
+$ yarn
+```
+
+Execute o app
+
+```
+$ yarn start
+```
+Em outra instância do terminal, emule o app
+
+```
+$ yarn android
+```
+<hr>
