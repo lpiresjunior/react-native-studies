@@ -7,6 +7,8 @@ Junto com todo o arsenal de conhecimento você vai colocar tudo na prática usan
 
 Você vai aprender e colocar em prática os conceitos ​básicos e avançados que aprendeu no curso, como:
 
+<img align="right" alt="GoStack" src="https://lp.devsamurai.com.br/wp-content/uploads/2020/03/Smart-Money-Mockup.png" width="200px" />
+
 - Gráficos e relatórios com filtros.
 - Dispositivos como GPS e Câmera.
 - ​Conexão com banco de dados local e remoto.
