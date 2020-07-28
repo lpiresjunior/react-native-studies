@@ -1,0 +1,1 @@
+Este repositório foi criado para armazenar meus estudos sobre React Native
