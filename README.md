@@ -51,3 +51,7 @@ Em outra instância do terminal, emule o app
 $ yarn android
 ```
 <hr>
+
+### Estudos específicos:
+
+- ### <a href="https://github.com/lutidev/react-native-studies/tree/master/hooks">React Hooks</a>
