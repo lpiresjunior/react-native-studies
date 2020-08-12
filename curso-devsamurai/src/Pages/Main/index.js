@@ -8,12 +8,6 @@ import EntryList from '../../components/EntryList';
 const Main = ({navigation}) => {
   const currenBalance = 2142.45;
 
-  const entries = [
-    {key: '1', description: 'Padaria Asa Branca', amount: 10},
-    {key: '2', description: 'Supermercado Isadora', amount: 190},
-    {key: '3', description: 'Posto Ipiranga', amount: 290},
-  ];
-
   const entriesGrouped = [
     {key: '1', description: 'Alimentação', amount: 200},
     {key: '2', description: 'Combustível', amount: 12},
@@ -33,7 +27,7 @@ const Main = ({navigation}) => {
 
       <EntrySummary entriesGrouped={entriesGrouped} />
 
-      <EntryList entries={entries} />
+      <EntryList navigation={navigation} />
     </View>
   );
 };

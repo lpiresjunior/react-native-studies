@@ -7,13 +7,19 @@ import {saveEntry} from '../../services/Entries';
 
 export default function NewEntry({navigation}) {
   const currentBalance = 2142.45;
-  const [amount, setAmount] = useState('0');
+  const entry = navigation.getParam('entry', {
+    id: null,
+    amount: '0.00',
+    entryAt: new Date(),
+  });
+
+  const [amount, setAmount] = useState(`${entry.amount}`);
 
   const save = () => {
-    const value = {
+    const data = {
       amount: parseFloat(amount),
     };
-    saveEntry(value);
+    saveEntry(data, entry);
   };
 
   return (
