@@ -5,6 +5,8 @@ import BalancePanel from '../../components/BalancePanel';
 import EntrySummary from '../../components/EntrySummary';
 import EntryList from '../../components/EntryList';
 
+import Colors from '../../styles/Colors';
+
 const Main = ({navigation}) => {
   const currenBalance = 2142.45;
 
@@ -20,11 +22,6 @@ const Main = ({navigation}) => {
     <View style={styles.container}>
       <BalancePanel currentBalance={currenBalance} />
 
-      <Button
-        title="adicionar"
-        onPress={() => navigation.navigate('NewEntry')}
-      />
-
       <EntrySummary entriesGrouped={entriesGrouped} />
 
       <EntryList navigation={navigation} />
@@ -35,7 +32,7 @@ const Main = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    backgroundColor: Colors.background,
   },
 });
 
