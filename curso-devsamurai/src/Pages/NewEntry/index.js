@@ -16,6 +16,14 @@ export default function NewEntry({navigation}) {
 
   const [amount, setAmount] = useState(`${entry.amount}`);
 
+  const isValid = () => {
+    if (parseFloat(amount) !== 0) {
+      return true;
+    }
+
+    return false;
+  };
+
   const onSave = () => {
     const data = {
       amount: parseFloat(amount),
@@ -49,7 +57,12 @@ export default function NewEntry({navigation}) {
       </View>
 
       <View>
-        <Button title="Adicionar" onPress={onSave} />
+        <Button
+          title="Adicionar"
+          onPress={() => {
+            isValid() && onSave();
+          }}
+        />
         <Button title="Excluir" onPress={onDelete} />
         <Button title="Cancelar" onPress={onClose} />
       </View>
