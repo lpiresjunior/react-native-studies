@@ -18,8 +18,10 @@ export default function BalancePanel({onNewEntryPress}) {
         colors={[Colors.violet, Colors.blue]}
         style={styles.panel}>
         <BalancePanelLabel currentBalance={currentBalance} />
+
         <BalancePanelChart />
       </LinearGradient>
+
       <TouchableOpacity style={styles.button} onPress={onNewEntryPress}>
         <Icon name="add" size={30} color={Colors.white} />
       </TouchableOpacity>

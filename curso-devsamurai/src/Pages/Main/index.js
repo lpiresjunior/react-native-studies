@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Button, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import BalancePanel from '../../components/BalancePanel';
 import EntrySummary from '../../components/EntrySummary';
@@ -11,10 +11,15 @@ const Main = ({navigation}) => {
   return (
     <View style={styles.container}>
       <BalancePanel onNewEntryPress={() => navigation.navigate('NewEntry')} />
-
-      <EntrySummary />
-
-      <EntryList navigation={navigation} />
+      <EntrySummary onPressActionButton={() => navigation.navigate('Report')} />
+      <EntryList
+        onEntryPress={(entry) =>
+          navigation.navigate('NewEntry', {
+            entry: entry,
+          })
+        }
+        onPressActionButton={() => navigation.navigate('Report')}
+      />
     </View>
   );
 };
