@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
-import {View, TextInput, StyleSheet, Button} from 'react-native';
+import {View, TextInput, Button, StyleSheet} from 'react-native';
 
 import BalanceLabel from '../../components/BalanceLabel';
 
 import {saveEntry} from '../../services/Entries';
 import {deleteEntry} from '../../services/Entries';
 
-export default function NewEntry({navigation}) {
-  const currentBalance = 2142.45;
+import Colors from '../../styles/Colors';
+
+const NewEntry = ({navigation}) => {
   const entry = navigation.getParam('entry', {
     id: null,
     amount: '0.00',
@@ -28,6 +29,8 @@ export default function NewEntry({navigation}) {
     const data = {
       amount: parseFloat(amount),
     };
+
+    console.log('NewEntry :: save ', data);
     saveEntry(data, entry);
     onClose();
   };
@@ -43,7 +46,7 @@ export default function NewEntry({navigation}) {
 
   return (
     <View style={styles.container}>
-      <BalanceLabel currentBalance={currentBalance} />
+      <BalanceLabel />
 
       <View>
         <TextInput
@@ -68,11 +71,12 @@ export default function NewEntry({navigation}) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors.background,
     padding: 10,
   },
   input: {
@@ -80,3 +84,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 });
+
+export default NewEntry;
