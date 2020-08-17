@@ -55,3 +55,4 @@ $ yarn android
 ### Estudos específicos:
 
 - ### <a href="https://github.com/lutidev/react-native-studies/tree/master/hooks">React Hooks</a>
+- ### <a href="https://github.com/luizluti/react-native-studies/tree/master/pomodoro_with_class">Class Component</a>
