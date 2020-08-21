@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, TextInput, Text, Switch, Button, Alert } from 'react-native'
+import { View, StyleSheet, TextInput, Text, Switch, Button } from 'react-native'
 import { Picker } from '@react-native-community/picker'
 import Slider from '@react-native-community/slider'
 
