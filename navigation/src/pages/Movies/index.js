@@ -1,23 +1,66 @@
-import React from 'react'
-import { View, Text, Button } from 'react-native'
+import React, { useState } from 'react'
+import { Text, Button, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import SearchModal from '../../components/SearchModal'
 
-export default function Movies () {
+export default function Movies (props) {
   const navigation = useNavigation()
 
+  const [modalVisible, setModalVisible] = useState(false)
+
+  const closeModal = () => {
+    setModalVisible(!modalVisible)
+  }
+
   return (
-    <View style={{ flex: 1, backgroundColor: '#1D1D27' }}>
+    <ScrollView style={{ flex: 1, backgroundColor: '#1D1D27' }}>
       <Text style={{ color: '#fff' }}>Filmes</Text>
 
+      {/* abrir o modal */}
       <Button
         title='Pesquisar Filmes'
-        onPress={() => navigation.navigate('SearchMovies')}
+        onPress={() => { setModalVisible(true) }}
       />
 
       <Button
         title='Lista de Filmes'
         onPress={() => navigation.navigate('MoviesList')}
       />
-    </View>
+
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+      <Text>ausihdasu ihdui sahudihasuhduihsauihduisa d sauhd usahduisah</Text>
+
+      <SearchModal
+        modalVisible={modalVisible}
+        closeModal={closeModal}
+      />
+    </ScrollView>
   )
 }

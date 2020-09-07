@@ -1,16 +1,10 @@
 import React from 'react'
-import { View, Button } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { View, Text } from 'react-native'
 
-export default function SearchMovies () {
-  const navigation = useNavigation()
-
+export default function SearchMovies ({ route }) {
   return (
     <View style={{ backgroundColor: '#1D1D27', flex: 1 }}>
-      <Button
-        title='Filmes'
-        onPress={() => navigation.navigate('Movies')}
-      />
+      <Text style={{ fontSize: 24, color: '#FFF', alignSelf: 'center' }}>{route.params.movie}</Text>
     </View>
   )
 }
