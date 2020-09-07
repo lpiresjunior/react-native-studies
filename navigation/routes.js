@@ -6,16 +6,18 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import Filmes from './src/pages/Filmes'
+import Movies from './src/pages/Movies'
 import Series from './src/pages/Series'
-import FilmesSearch from './src/pages/FilmesSearch'
+import SearchMovies from './src/pages/SearchMovies'
 import SeriesSearch from './src/pages/SeriesSearch'
+import MoviesList from './src/pages/MoviesList'
+import SeriesList from './src/pages/SeriesList'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
 const icons = {
-  Filmes: {
+  Movies: {
     name: 'movie'
   },
   Series: {
@@ -35,15 +37,14 @@ function Tabs () {
       }) }
       tabBarOptions={{
         style: {
-          backgroundColor: '#171718',
-          borderColor: '#000'
+          backgroundColor: '#121218'
         },
         activeTintColor: '#FFF',
-        inactiveTintColor: '#615B5B'
+        inactiveTintColor: '#909090'
       }}
     >
-      <Tab.Screen name='Filmes' component={Filmes} />
-      <Tab.Screen name='Series' component={Series} />
+      <Tab.Screen name='Movies' component={Movies} options={{ title: 'Filmes' }}/>
+      <Tab.Screen name='Series' component={Series} options={{ title: 'Séries' }}/>
     </Tab.Navigator>
 
   )
@@ -54,8 +55,46 @@ export default function App () {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
-        <Stack.Screen name="FilmesSearch" component={FilmesSearch} options={{ headerShown: false }} />
-        <Stack.Screen name="SeriesSearch" component={SeriesSearch} />
+        <Stack.Screen name="SearchMovies"
+          component={SearchMovies}
+          options={{
+            title: 'Pesquisar Filme',
+            headerStyle: {
+              backgroundColor: '#121218'
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+        <Stack.Screen name="SeriesSearch"
+          component={SeriesSearch}
+          options={{
+            title: 'Pesquisar Série',
+            headerStyle: {
+              backgroundColor: '#121218'
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+        <Stack.Screen name="MoviesList"
+          component={MoviesList}
+          options={{
+            title: 'Lista de Filmes',
+            headerStyle: {
+              backgroundColor: '#121218'
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+        <Stack.Screen name="SeriesList"
+          component={SeriesList}
+          options={{
+            title: 'Lista de Séries',
+            headerStyle: {
+              backgroundColor: '#121218'
+            },
+            headerTintColor: '#fff'
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
