@@ -1,0 +1,1 @@
+Este projeto foi criado durante o curso de react native da B7web para treinar requisições em api.
