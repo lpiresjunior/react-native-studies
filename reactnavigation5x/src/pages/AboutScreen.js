@@ -2,17 +2,17 @@ import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const HomeScreen = () => {
+const AboutScreen = () => {
   const navigation = useNavigation();
 
-  const handleAboutClick = () => {
-    navigation.navigate('About');
+  const handleBackButton = () => {
+    navigation.popToTop();
   };
 
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
-      <Button title="Sobre" onPress={handleAboutClick} />
+      <Text>Sobre</Text>
+      <Button title="Voltar" onPress={handleBackButton} />
     </View>
   );
 };
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default AboutScreen;
