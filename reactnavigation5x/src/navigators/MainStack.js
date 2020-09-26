@@ -12,27 +12,15 @@ export default () => {
       screenOptions={{
         headerTitleAlign: 'center',
         headerStyle: {
-          backgroundColor: '#0000FF',
+          backgroundColor: '#66FF66',
         },
         headerTitleStyle: {
-          color: '#FFF',
+          color: '#000',
           fontSize: 16,
         },
       }}>
-      <MainStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          title: 'Início',
-        }}
-      />
-      <MainStack.Screen
-        name="About"
-        component={AboutScreen}
-        options={({route}) => ({
-          title: route.params?.name,
-        })}
-      />
+      <MainStack.Screen name="Home" component={HomeScreen} />
+      <MainStack.Screen name="About" component={AboutScreen} />
     </MainStack.Navigator>
   );
 };
