@@ -1,27 +1,38 @@
 import React, {useState, useLayoutEffect} from 'react';
-import {View, Text, StyleSheet, Button, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  TextInput,
+  FlatList,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
   const [name, setName] = useState('');
   const [count, setCount] = useState(0);
+  const [ingredients, setIngredients] = useState([]);
+
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     title: count,
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [count]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: count,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [count]);
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => <Button title="+1" onPress={handleHeaderPlus} />,
+      headerRight: () => (
+        <Button title="Adicionar" onPress={handleHeaderPlus} />
+      ),
     });
   });
 
   const handleHeaderPlus = () => {
-    setCount(count + 1);
+    setIngredients([...ingredients, name]);
+    setName('');
   };
 
   const handleSendButton = () => {
@@ -35,38 +46,19 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Qual seu nome?</Text>
+      <Text style={styles.title}>Faça um Bolo</Text>
       <TextInput
         style={styles.input}
+        placeholder="Digite um ingrediente"
         value={name}
         onChangeText={(text) => setName(text)}
       />
 
-      <Button title="Enviar" onPress={handleSendButton} />
-
-      <Button
-        title="BG Vermelho"
-        onPress={() =>
-          navigation.setOptions({
-            headerStyle: {
-              backgroundColor: '#FF0000',
-            },
-          })
-        }
+      <FlatList
+        data={ingredients}
+        renderItem={({item}) => <Text style={styles.itemList}>{item}</Text>}
+        keyExtractor={(item) => item}
       />
-
-      <Button
-        title="BG Azul"
-        onPress={() =>
-          navigation.setOptions({
-            headerStyle: {
-              backgroundColor: '#0000FF',
-            },
-          })
-        }
-      />
-
-      <Button title="+1" onPress={() => setCount(count + 1)} />
     </View>
   );
 };
@@ -74,14 +66,26 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#2C2C2C',
     alignItems: 'center',
   },
+  title: {
+    color: '#FFF',
+    fontSize: 24,
+    fontWeight: 'bold',
+    margin: 10,
+  },
   input: {
-    width: 250,
+    width: '80%',
     padding: 10,
-    fontSize: 15,
-    backgroundColor: '#DDD',
+    fontSize: 18,
+    backgroundColor: '#FFF',
+  },
+  itemList: {
+    color: '#FFF',
+    fontSize: 18,
+    margin: 5,
+    textAlign: 'center',
   },
 });
 

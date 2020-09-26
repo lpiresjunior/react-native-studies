@@ -11,16 +11,22 @@ export default () => {
   return (
     <MainStack.Navigator
       screenOptions={{
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'left',
         headerStyle: {
-          backgroundColor: '#66FF66',
+          backgroundColor: '#8E8E8E',
         },
         headerTitleStyle: {
           color: '#000',
           fontSize: 16,
         },
       }}>
-      <MainStack.Screen name="Home" component={HomeScreen} />
+      <MainStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Exercícios',
+        }}
+      />
       <MainStack.Screen name="About" component={AboutScreen} />
     </MainStack.Navigator>
   );
