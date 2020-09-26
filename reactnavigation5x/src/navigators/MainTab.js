@@ -11,7 +11,9 @@ import {Image} from 'react-native';
 const Tab = createBottomTabNavigator();
 
 export default () => (
-  <Tab.Navigator tabBar={(props) => <CustomTabBar {...props} />}>
+  <Tab.Navigator
+    initialRouteName="TabHome"
+    tabBar={(props) => <CustomTabBar {...props} />}>
     <Tab.Screen
       name="TabAbout"
       component={TabAboutScreen}
