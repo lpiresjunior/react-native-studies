@@ -1,9 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 const AboutScreen = () => {
   const navigation = useNavigation();
+  const route = useRoute();
+
+  const name = route.params?.name;
 
   const handleBackButton = () => {
     navigation.popToTop();
@@ -11,7 +14,7 @@ const AboutScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Sobre</Text>
+      <Text>Sobre {name}</Text>
       <Button title="Voltar" onPress={handleBackButton} />
     </View>
   );

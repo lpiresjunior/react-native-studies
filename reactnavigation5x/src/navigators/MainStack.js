@@ -9,8 +9,29 @@ const MainStack = createStackNavigator();
 export default () => {
   return (
     <MainStack.Navigator>
-      <MainStack.Screen name="Home" component={HomeScreen} />
-      <MainStack.Screen name="About" component={AboutScreen} />
+      <MainStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Início',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: '#0000FF',
+          },
+          headerTitleStyle: {
+            color: '#FFF',
+            fontSize: 23,
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <MainStack.Screen
+        name="About"
+        component={AboutScreen}
+        options={({route}) => ({
+          title: route.params?.name,
+        })}
+      />
     </MainStack.Navigator>
   );
 };
