@@ -24,8 +24,19 @@ export default () => (
 
         return <Image source={imgSource} style={{width: 32, height: 32}} />;
       },
-    })}>
-    <Tab.Screen name="TabHome" component={TabHomeScreen} />
-    <Tab.Screen name="TabAbout" component={TabAboutScreen} />
+    })}
+    tabBarOptions={{
+      keyboardHidesTabBar: true,
+    }}>
+    <Tab.Screen
+      name="TabHome"
+      component={TabHomeScreen}
+      options={{tabBarLabel: 'Home'}}
+    />
+    <Tab.Screen
+      name="TabAbout"
+      component={TabAboutScreen}
+      options={{tabBarLabel: 'Sobre'}}
+    />
   </Tab.Navigator>
 );
