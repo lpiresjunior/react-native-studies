@@ -14,6 +14,16 @@ const HomeScreen = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => <Button title="+1" onPress={handleHeaderPlus} />,
+    });
+  });
+
+  const handleHeaderPlus = () => {
+    setCount(count + 1);
+  };
+
   const handleSendButton = () => {
     navigation.setOptions({
       title: name,

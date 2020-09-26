@@ -20,19 +20,7 @@ export default () => {
           fontSize: 16,
         },
       }}>
-      <MainStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          headerTitle: () => (
-            <Image
-              style={{width: 150, height: 45}}
-              source={{uri: 'https://www.google.com.br/google.jpg'}}
-            />
-          ),
-          headerRight: () => <Button title="opa" onPress={() => alert('oi')} />,
-        }}
-      />
+      <MainStack.Screen name="Home" component={HomeScreen} />
       <MainStack.Screen name="About" component={AboutScreen} />
     </MainStack.Navigator>
   );
